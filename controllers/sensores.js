@@ -12,11 +12,11 @@ let co2 = 0;
 let humidity = 0;
 
 router.get("/estado", async (req, res, next) => {
-    res.send({data:{ledQuarto, ledSala, ledOutside, portas, ventoinha, ledAquecer, janela}})
+    res.send({data:[{ledQuarto}, {ledSala}, {ledOutside}, {portas}, {ventoinha}, {ledAquecer}, {janela}]})
 });
 
 router.get("/dados", async (req, res, next) => {
-    res.send({data:{temperatura, co2, humidity}})
+    res.send({data:[{temperatura}, {co2}, {humidity}]})
 });
 
 router.put("/dados", async (req, res, next) => {
