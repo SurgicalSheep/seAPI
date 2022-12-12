@@ -22,11 +22,11 @@ router.get("/dados", async (req, res, next) => {
 router.put("/dados", async (req, res, next) => {
     try {
         let {Temperatura,Co2,Humidity} = req.body;
-        if(Temperatura)
+        if(Temperatura != undefined)
     temperatura = Temperatura;
-    if(Co2)
+    if(Co2 != undefined)
     co2 = Co2;
-    if(Humidity)
+    if(Humidity != undefined)
     humidity = Humidity;
     res.send({data:"Dados atualizados com sucesso!"})
     } catch (error) {
@@ -38,19 +38,19 @@ router.put("/dados", async (req, res, next) => {
 router.put("/estado", async (req, res, next) => {
     try {
         let {LedQuarto, LedSala, LedOutside, Portas, Ventoinha, LedAquecer, Janela} = req.body;
-        if(LedQuarto)
+        if(LedQuarto != undefined)
         ledQuarto = LedQuarto;
-        if(LedSala)
+        if(LedSala != undefined)
         ledSala = LedSala;
-        if(LedOutside)
+        if(LedOutside != undefined)
         ledOutside = LedOutside;
-        if(Portas)
+        if(Portas != undefined)
         portas = Portas;
-        if(Ventoinha)
+        if(Ventoinha != undefined)
         ventoinha = Ventoinha;
-        if(LedAquecer)
+        if(LedAquecer != undefined)
         ledAquecer = LedAquecer;
-        if(Janela)
+        if(Janela != undefined)
         janela = Janela;
         res.send({data:"Estado atualizado com sucesso!"})
     } catch (error) {
