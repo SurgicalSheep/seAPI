@@ -2,12 +2,15 @@ const express = require("express");
 const createError = require("http-errors");
 const app = express();
 const port = 3000;
-const routers = require("./routes/sensores.js");
 
+const sensores = require("./controllers/sensores");
+
+app.use(express.urlencoded({ extended: false,limit: '10mb' }));
+app.use(express.json({limit: '10mb'}));
+app.use("/sensores", sensores);
 app.get("/",(req, res)=>{
-  res.send("...");
+  res.send("Welcome to limbo!");
 });
-app.use("/", routers);
 
 app.use(async (req, res, next) => {
   next(createError.NotFound("Route does not exist!"));

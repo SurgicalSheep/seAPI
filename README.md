@@ -1,2 +1,2 @@
 # seAPI
-Api to handle arduino data
+Simple api for school project (SE)
